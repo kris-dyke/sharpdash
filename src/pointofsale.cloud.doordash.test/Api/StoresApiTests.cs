@@ -21,9 +21,9 @@ namespace pointofsale.cloud.doordash.test.Api
     /// Please update the test case below to test the API endpoint.
     /// </remarks>
     [TestFixture]
-    public class Apiv1storesApiTests
+    public class StoresApiTests
     {
-        private StoresApi instance;
+        StoresApi _instance;
 
         /// <summary>
         /// Setup before each unit test
@@ -31,7 +31,7 @@ namespace pointofsale.cloud.doordash.test.Api
         [SetUp]
         public void Init()
         {
-            instance = new StoresApi();
+            _instance = new StoresApi();
         }
 
         /// <summary>

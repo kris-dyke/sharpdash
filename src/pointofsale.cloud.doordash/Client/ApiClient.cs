@@ -26,7 +26,7 @@ namespace pointofsale.cloud.doordash.Client
     /// </summary>
     public class ApiClient
     {
-        private readonly JsonSerializerSettings serializerSettings = new JsonSerializerSettings
+        readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
         {
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
         };
@@ -105,7 +105,7 @@ namespace pointofsale.cloud.doordash.Client
         public RestClient RestClient { get; set; }
 
         // Creates and sets up a RestRequest prior to a call.
-        private RestRequest PrepareRequest(
+        RestRequest PrepareRequest(
             String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
@@ -317,7 +317,7 @@ namespace pointofsale.cloud.doordash.Client
             // at this point, it must be a model (json)
             try
             {
-                return JsonConvert.DeserializeObject(response.Content, type, serializerSettings);
+                return JsonConvert.DeserializeObject(response.Content, type, _serializerSettings);
             }
             catch (Exception e)
             {
@@ -520,7 +520,7 @@ namespace pointofsale.cloud.doordash.Client
         /// </summary>
         /// <param name="value"></param>
         /// <returns>True if object is a collection type</returns>
-        private static bool IsCollection(object value)
+        static bool IsCollection(object value)
         {
             return value is IList || value is ICollection;
         }
