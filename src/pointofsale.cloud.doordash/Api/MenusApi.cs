@@ -134,7 +134,7 @@ namespace pointofsale.cloud.doordash.Api
     /// </summary>
     public class MenusApi : IMenusApi
     {
-        private ExceptionFactory _exceptionFactory = (name, response) => null;
+        ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MenusApi"/> class.

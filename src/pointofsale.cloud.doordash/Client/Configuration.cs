@@ -39,8 +39,8 @@ namespace pointofsale.cloud.doordash.Client
 
         #region Static Members
 
-        private static readonly object GlobalConfigSync = new { };
-        private static Configuration _globalConfiguration;
+        static readonly object GlobalConfigSync = new { };
+        static Configuration _globalConfiguration;
 
         /// <summary>
         /// Default creation of exceptions for a given method name and response object
@@ -86,16 +86,16 @@ namespace pointofsale.cloud.doordash.Client
         /// Gets or sets the API key based on the authentication name.
         /// </summary>
         /// <value>The API key.</value>
-        private IDictionary<string, string> _apiKey = null;
+        IDictionary<string, string> _apiKey = null;
 
         /// <summary>
         /// Gets or sets the prefix (e.g. Token) of the API key based on the authentication name.
         /// </summary>
         /// <value>The prefix of the API key.</value>
-        private IDictionary<string, string> _apiKeyPrefix = null;
+        IDictionary<string, string> _apiKeyPrefix = null;
 
-        private string _dateTimeFormat = ISO8601_DATETIME_FORMAT;
-        private string _tempFolderPath = Path.GetTempPath();
+        string _dateTimeFormat = ISO8601_DATETIME_FORMAT;
+        string _tempFolderPath = Path.GetTempPath();
 
         #endregion Private Members
 
@@ -207,7 +207,7 @@ namespace pointofsale.cloud.doordash.Client
 
         #region Properties
 
-        private ApiClient _apiClient = null;
+        ApiClient _apiClient = null;
         /// <summary>
         /// Gets an instance of an ApiClient for this configuration
         /// </summary>
@@ -220,7 +220,7 @@ namespace pointofsale.cloud.doordash.Client
             }
         }
 
-        private String _basePath = null;
+        String _basePath = null;
         /// <summary>
         /// Gets or sets the base path for API access.
         /// </summary>
